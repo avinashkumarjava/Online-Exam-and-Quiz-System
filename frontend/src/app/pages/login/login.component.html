@@ -1,0 +1,57 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt20">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class="div" routerLink="/"> 
+                        <img 
+                            class="back" 
+                            src="../../../../assets/back.png" 
+                            alt="">
+                    </div>
+                    <div class="container text-center">
+                        <img src="../../../assets/logo.png" alt="" width="100px" height="100px">
+                    </div>
+                    <h1 class="text-center">Login Here</h1>
+
+                    <!-- {{loginData | json}} -->
+
+                    <form (ngSubmit)="formSubmit()">
+                        <!-- Username Field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input 
+                                [(ngModel)] = "loginData.username"
+                                name = "username"
+                                matInput 
+                                placeholder="Enter here"
+                                required>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+
+                        <!-- password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input 
+                                [(ngModel)] = "loginData.password"
+                                name = "password"
+                                type="password"
+                                matInput 
+                                placeholder="Enter here"
+                                required>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+
+                        <!-- Buttons -->
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary" type="submit">Login</button>
+                            <button mat-raised-button color="accent" class="ml10">Reset</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

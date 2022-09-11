@@ -1,0 +1,158 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt10 mb10">
+            <div class="col-md-6 offset-md-3">
+                <mat-card *ngIf="!flag">
+                    <!-- <div class="div" routerLink="/">
+                        <img 
+                            class="back" 
+                            src="../../../../assets/back.png"  
+                            alt="">
+                    </div> -->
+                    <!-- <div class="container text-center">
+                        <img src="../../../assets/syslogo.jpeg" style="width: 100px; height: 100px;"/>
+                    </div>
+                    <h1 class="text-center">Register Here</h1> -->
+
+                    <mat-toolbar class="mb20" color="accent" style="justify-content: center; font-size: 30px;">
+                        
+                        
+                        <div class="col-md-4" style="justify-content: center;">
+                            <a
+                                routerLink="/"
+                                mat-icon-button 
+                                class="example-icon" 
+                                aria-label="Example icon-button with menu icon">
+                                <mat-icon>arrow_back_ios</mat-icon>
+                            </a>
+                        </div>
+                        <div class="col-md-5">
+                            <span>REGISTER</span>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </mat-toolbar>
+                    
+                    <!-- {{user | json}} -->
+                    <form (ngSubmit)="formSubmit()" style="font-size: 12px;">
+                        <!-- Username Field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input 
+                                [(ngModel)] = "user.username"
+                                name="username"
+                                matInput 
+                                placeholder="Enter here"
+                                required>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+
+                        <!-- Password Field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input 
+                                [(ngModel)] = "user.password"
+                                name="password"
+                                type="password" 
+                                matInput 
+                                placeholder="Enter here"
+                                required>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+
+                        <!-- Firstname Field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input 
+                            [(ngModel)] = "user.firstName"
+                            name="firstName"
+                            matInput 
+                            placeholder="Enter here"
+                            required>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+
+                        <!-- Lastname Field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input 
+                                [(ngModel)] = "user.lastName"
+                                name="lastName"
+                                matInput 
+                                placeholder="Enter here"
+                                required>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+
+                        <!-- Email Field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email ID</mat-label>
+                            <input 
+                                [(ngModel)] = "user.email"
+                                name="email"
+                                type="email" 
+                                matInput 
+                                placeholder="Enter here"
+                                required>
+                            <mat-hint>Please enter your genuine email.</mat-hint>
+                        </mat-form-field>
+
+                        <!-- Phone Number Field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input 
+                                [(ngModel)] = "user.phone"
+                                name="phone"
+                                type="number" 
+                                matInput 
+                                placeholder="Enter here"
+                                required>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+
+                        <!-- Buttons -->
+                        <div class="text-center">
+                            <button class="full-width" type="submit" mat-raised-button color="primary">Register</button>
+                            <!-- <button mat-raised-button color="accent" style="margin-left: 20px;">Clear</button> -->
+                        </div>
+                    </form>
+                </mat-card>
+
+                <!-- email verification and otp -->
+                <mat-card *ngIf="flag">
+                    <mat-toolbar class="mb20" color="accent" style="justify-content: center; font-size: 30px;">EMAIL VERIFICATION</mat-toolbar>
+
+                    <form>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>One Time Password</mat-label>
+                            <input 
+                                [(ngModel)]="otpData"
+                                name="otpData"
+                                type="text" 
+                                matInput 
+                                placeholder="Ex. 345678"
+                                required>
+                            <mat-hint>Enter 6 digit OTP received on your email.</mat-hint>
+                        </mat-form-field>
+
+                        <div class="text-center">
+                            <button 
+                                class="mt20 full-width" 
+                                type="submit" 
+                                mat-raised-button 
+                                color="primary"
+                                (click)="verify()">
+                                VERIFY
+                            </button>
+
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

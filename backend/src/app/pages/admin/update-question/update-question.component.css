@@ -1,0 +1,17 @@
+.w100{
+    width: 100%;
+}
+.header-p{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .header-p:hover{
+    color: white;
+  }

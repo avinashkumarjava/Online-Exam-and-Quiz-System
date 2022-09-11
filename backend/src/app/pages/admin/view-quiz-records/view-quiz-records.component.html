@@ -1,0 +1,45 @@
+<mat-card class="mt10 color-card">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="div" [routerLink]="'/admin/quizzes'">
+                        <img 
+                            class="back" 
+                            src="../../../../assets/back.png" 
+                            alt="">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <mat-card-content>
+                        <div class="container text-center">
+                            <p class="mt10" style="font-size:20px"> <b>{{ quizTitle }}</b> History</p>
+                        </div>
+                    </mat-card-content> 
+                </div>
+                <div class="col-md-2">
+                    <div class="record-count">
+                        <span class="record-text text-center">Attempt : {{ records.length }} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="mt10 mb10 xp" *ngFor="let r of records"> 
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title> <span style="text-transform: capitalize;">{{ r.userdata.firstName }} {{ r.userdata.lastName }}</span> </mat-card-title>
+            <mat-card-subtitle>{{ r.userdata.email }} &nbsp; {{ r.date }}</mat-card-subtitle> 
+        </mat-card-header>
+</mat-card>
+
+<div class="col-md-12" *ngIf="records.length == 0" style="margin-top: 200px;">
+    <mat-card>
+        <mat-card-content>
+            <div class="container text-center">
+                <span style="font-size: 30px;">This quiz is not attempted by any of the users yet.</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

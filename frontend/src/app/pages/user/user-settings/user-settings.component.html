@@ -1,0 +1,56 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <mat-card style="margin-top:50px">
+                    <div class="container text-center mt20">
+                        <span style="font-size:30px;">Change Password</span>
+                    </div>
+                    <mat-card-content>
+
+                        <form action="">
+
+                            <mat-form-field class="mt20" style="width: 100%;" appearance="outline">
+                                <mat-label>Current Password</mat-label>
+                                <input 
+                                    type="password"
+                                    matInput
+                                    required
+                                    placeholder="Enter current password here">
+                                <mat-icon matSuffix>password</mat-icon>
+                                <mat-hint>Current password should be same.</mat-hint>
+                            </mat-form-field>
+                            <mat-divider></mat-divider>
+                            <mat-form-field class="mt20" style="width: 100%;" appearance="outline">
+                                <mat-label>New Password</mat-label>
+                                <input 
+                                    type="password"
+                                    matInput
+                                    required
+                                    placeholder="Enter new password here">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>New password should be strong enough.</mat-hint>
+                            </mat-form-field>
+                            <mat-divider></mat-divider>
+                            <mat-form-field class="mt20" style="width: 100%;" appearance="outline">
+                                <mat-label>Confirm New Password</mat-label>
+                                <input 
+                                    type="password"
+                                    matInput
+                                    required
+                                    placeholder="Confirm new password here">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>Confirm passowrd should be same with new password.</mat-hint>
+                            </mat-form-field>
+                            <mat-divider></mat-divider>
+                            <div class="container text-center" style="margin-top: 30px;">
+                                <button mat-raised-button color="accent">Change Password</button>
+                            </div>
+
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div> 

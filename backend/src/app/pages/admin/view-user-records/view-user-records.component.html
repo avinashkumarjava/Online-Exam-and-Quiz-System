@@ -1,0 +1,100 @@
+<mat-card class="mt10 color-card" *ngIf="records.length != 0">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <div class="div" [routerLink]="'/admin/view-users'"> 
+                        <img 
+                            class="back" 
+                            src="../../../../assets/back.png" 
+                            alt="">
+                    </div>
+                </div>
+                <div class="col-md-11">
+                    <mat-card-content>
+                        <div class="container text-center">
+                            <p class="mt10" style="font-size:20px"><span style="text-transform: capitalize;">{{ user.firstName }} {{ user.lastName }}</span>'s Attempted Quizzes History</p>
+                        </div>
+                    </mat-card-content> 
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="mt10 mb10 color-card xp" *ngFor="let r of records">
+    <div class="bootstrap-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>
+                            <span>{{ r.quiz.title }}</span>
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <span>{{ r.date }}</span>
+                        </mat-card-subtitle> 
+                    </mat-card-header>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button 
+                        mat-button 
+                        color="accent">
+                        Download Result
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button mat-button>Download Result</button> -->
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <div class="bootstrap-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        
+                        <ul>
+                            <li><span><b>Total Question</b> : <span style="font-size:17px"> {{ r.quiz.noOfQuestions }} </span></span></li>
+                            <li><span><b>Total Attempted Questions</b> : <span style="font-size:17px"> {{ r.attemptedQuestions }} </span></span></li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-4">
+                        
+                        <ul>
+                            <li><span><b>Total Marks</b> : <span style="font-size:17px"> {{ r.quiz.maxMarks }} </span></span></li>
+                            <li><span><b>Correct Attempted Questions</b> : <span style="font-size:17px"> {{ r.correctAttempted }} </span></span></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul>
+                            <li><span><b>Quiz Category</b> : <span style="font-size:17px"> {{ r.quiz.category.title }} </span></span></li>
+                            <li><span><b>Marks Obtained</b> : <span style="font-size:17px"> {{ r.obtainedMarks }} </span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<div class="col-md-12" *ngIf="records.length == 0" style="margin-top: 200px;">
+    <mat-card>
+        <mat-card-content>
+            <div class="container text-center">
+                <span style="font-size: 30px; text-transform: capitalize;" >{{ user.firstName }} {{ user.lastName }} haven't attempted any quiz yet.</span>
+            </div>
+            <!-- <div class="container text-center mt20">
+                <button 
+                    [routerLink]="'/user-dashboard/0'"
+                    mat-flat-button 
+                    color="accent">
+                    Goto Quizzes
+                </button>
+            </div> -->
+        </mat-card-content>
+    </mat-card>
+</div>
+

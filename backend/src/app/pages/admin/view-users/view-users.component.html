@@ -1,0 +1,128 @@
+<mat-card class="mt10 mb20 color-card">
+    <mat-tab-group mat-align-tabs="center" animationDuration="1000ms">
+        <mat-tab label="Users">
+            <mat-accordion *ngFor="let u of users">
+                <mat-expansion-panel class="mb10 mt10" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <div class="user-status mr20" style="margin-top: 13px;"> 
+                            <button
+                                (click)="delUser(u.id)"
+                                style="margin-bottom: 15px;"
+                                class="mr10" 
+                                mat-mini-fab 
+                                color="warn" 
+                                aria-label="Example icon button with a delete icon">
+                                <mat-icon>
+                                    delete
+                                </mat-icon>
+                            </button>
+                        </div>
+                        <mat-panel-title> 
+                            <div style="margin-top: 14px;" mat-card-avatar class="example-header-image"></div>
+                            <span 
+                                class="ml10" 
+                                style="text-transform: uppercase; margin-top: 16px;">
+                                <h2> 
+                                    <span>
+                                        {{ u.firstName }} {{ u.lastName }} <span style="font-weight:lighter ;text-transform: none; font-size: 15px; color: grey;">({{ u.username }}) </span>
+                                    </span>                             
+                                    
+                                </h2>
+                                
+                            </span>
+                            
+                        </mat-panel-title>
+                        
+                        <mat-panel-description>
+                            <span class="mt20">Click here to {{panelOpenState ? 'collapse' : 'expand'}}</span>
+                        </mat-panel-description> 
+                    </mat-expansion-panel-header>
+                    <div class="bootstrap-wrapper">
+                        <div class="container">
+                            <hr>
+                            <div class="row mt10" style="margin-left: 300px;">
+                                <button
+                                    [routerLink]="'/admin/view-user/'+ u.username" 
+                                    color="accent"
+                                    mat-flat-button>
+                                    View Profile 
+                                </button>
+        
+                                <button
+                                    [routerLink]="'/admin/view-user-records/'+ u.username"
+                                    class="ml10"
+                                    color="primary"
+                                    mat-flat-button>
+                                    User Activities 
+                                </button>
+        
+                                <button
+                                    class="ml10"
+                                    color="warn"
+                                    mat-flat-button>
+                                    User Feedbacks
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-tab>
+        <mat-tab label="Admins">
+            <mat-accordion *ngFor="let u of admins">
+                <mat-expansion-panel class="mb10 mt10" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        
+                        <mat-panel-title> 
+                            <div style="margin-top: 14px;" mat-card-avatar class="example-header-image"></div>
+                            <span 
+                                class="ml10" 
+                                style="text-transform: uppercase; margin-top: 16px;">
+                                <h2> 
+                                    <span>
+                                        {{ u.firstName }} {{ u.lastName }} <span style="font-weight:lighter ;text-transform: none; font-size: 15px; color: grey;">({{ u.username }}) </span>
+                                    </span>                             
+                                    
+                                </h2>
+                                
+                            </span>
+                            
+                        </mat-panel-title>
+                        
+                        <mat-panel-description>
+                            <span class="mt20">Click here to {{panelOpenState ? 'collapse' : 'expand'}}</span>
+                        </mat-panel-description> 
+                    </mat-expansion-panel-header>
+                    <div class="bootstrap-wrapper">
+                        <div class="container">
+                            <hr>
+                            <div class="row mt10" style="margin-left: 400px;">
+                                <button
+                                    [routerLink]="'/admin/view-user/'+ u.username" 
+                                    color="accent"
+                                    mat-flat-button>
+                                    View Profile 
+                                </button>
+        
+                                <!-- <button
+                                    [routerLink]="'/admin/view-user-records/'+ u.username"
+                                    class="ml10"
+                                    color="primary"
+                                    mat-flat-button>
+                                    User Activities 
+                                </button> -->
+        
+                                <button
+                                    class="ml10"
+                                    color="warn"
+                                    mat-flat-button>
+                                    All Feedbacks
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

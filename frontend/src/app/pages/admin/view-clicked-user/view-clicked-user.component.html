@@ -1,0 +1,106 @@
+<!-- <h1 mat-dialog-title>User Profile</h1>
+<mat-dialog-content class="mat-typography">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="container text-center mt10"> 
+                <img 
+                     src="../../../assets/loginLogo1.png" 
+                     alt=""
+                     class="profile-image">
+            </div>
+
+            
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button cdkFocusInitial>User Activities</button>
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions> -->
+
+<!-- <mat-card class="mt10 mb10">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div> 
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center mt10"> 
+                    <img 
+                         src="../../../assets/loginLogo1.png" 
+                         alt=""
+                         class="profile-image">
+                     
+                    <h1 class="mt20"><span style="text-transform: capitalize;">{{user.firstName}} {{user.lastName}}</span></h1>
+                 </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card> -->
+
+<mat-card *ngIf="user" class="mt10 mb20">
+    <div class="div" [routerLink]="'/admin/view-users'">
+        <img 
+            class="back" 
+            src="../../../../assets/back.png" 
+            alt=""
+            >
+
+        <span class="text ml10" style="font-size: 20px;">Back</span>
+    </div>
+    <div class="container text-center">
+        <span style="font-size:30px;">Your Profile Details</span>
+    </div>
+    <mat-card-content>
+        <div class="bootstrap-wrapper"> 
+            <div class="container">
+                <div class="container text-center mt20"> 
+                   <img 
+                        src="../../../assets/loginLogo1.png" 
+                        alt=""
+                        class="profile-image">
+                    
+                    <h1 class="mt20"><span style="text-transform: capitalize;">{{user.firstName}} {{user.lastName}}</span></h1>
+                </div> 
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>Username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>User ID</td>
+                                <td>CE_{{user.id}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Phone No.</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?"ACTIVE":"DEACTIVE"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">User Activities</button>
+        <button mat-raised-button color="accent" >View Quizzes</button>
+    </mat-card-actions>
+</mat-card>

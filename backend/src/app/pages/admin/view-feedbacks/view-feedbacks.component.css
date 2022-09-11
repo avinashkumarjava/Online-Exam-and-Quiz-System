@@ -1,0 +1,12 @@
+.example-header-image {
+    background-image: url('https://image.flaticon.com/icons/png/512/327/327010.png');
+    background-size: cover;
+  }
+
+.viewfeedback{
+  background-color: #69F0AE;
+}
+.custom-scroll{
+  scrollbar-width: normal;
+  scrollbar-color: red green;
+}

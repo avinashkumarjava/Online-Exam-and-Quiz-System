@@ -1,0 +1,97 @@
+<!-- <div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt20">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h1>Welcome to Classromm Quiz</h1>
+                <button mat-raised-button color="accent">Home Page</button>
+            </div>
+        </div>
+    </div>
+</div>  -->
+
+<!-- <mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    Responsive side navigation
+</mat-toolbar> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class="avatar mat-elevation-z8" src="../../../assets/syslogo.jpeg" />
+
+        <!-- <h4 class="name">John Smith</h4>
+        <p class="designation">Software Engineer</p> -->
+
+        <!-- <mat-icon class="avatar mat-elevation-z8">menu_book</mat-icon> -->
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button [routerLink]="'/login'" mat-button class="menu-button">
+            <mat-icon>login</mat-icon>
+            <span>Login</span>
+        </button>
+        <button [routerLink]="'/signup'" mat-button class="menu-button">
+            <mat-icon>how_to_reg</mat-icon>
+            <span>Register</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>info</mat-icon>
+            <span>About</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>login</mat-icon>
+            <span>Admin</span>
+        </button>
+
+        <button mat-button class="menu-button">
+            <mat-icon>help</mat-icon>
+            <span>Help</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+        <div class="content banner_home mat-elevation-z8">
+            <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+                <mat-icon *ngIf="!sidenav.opened">
+                    menu
+                </mat-icon>
+                <mat-icon *ngIf="sidenav.opened">
+                    close
+                </mat-icon>
+            </button>
+            <img src="../../../assets/main-logo1.png" alt="">
+        </div>
+
+        <!-- <div class="content banner_home mat-elevation-z8">
+            <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+                <mat-icon *ngIf="!sidenav.opened">
+                    menu
+                </mat-icon>
+                <mat-icon *ngIf="sidenav.opened">
+                    close
+                </mat-icon>
+            </button>
+
+            <div class="hub">
+                <span contenteditable="true">Quiz</span>
+                <span contenteditable="true">Hub</span>
+            </div>
+
+        </div> -->
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

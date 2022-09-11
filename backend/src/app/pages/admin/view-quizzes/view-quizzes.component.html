@@ -1,0 +1,106 @@
+<mat-card class="mt10 color-card">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="header">
+                        <span>
+                            <p class="header-p">Total available quizzes</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="header">
+                        <span>
+                            <p class="header-t"> {{ quizzes.length }} </p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<!-- <mat-card class="mb20 mt10"> -->
+    <mat-accordion class="color-card" *ngFor="let q of quizzes">
+        <mat-expansion-panel class="mt10 color-card xp" (opened)="panelOpenState = true" (closed)="panelOpenState = false"> 
+            <mat-expansion-panel-header>
+                <div class="quiz-status mr20" style="margin-top: 13px;">
+                    <span>Quiz Status : </span> 
+                    <span><b>{{ q.active ? 'ON' : 'OFF'}}</b></span>
+                </div>
+                <mat-panel-title>
+                    <div style="margin-top: 10px;" mat-card-avatar class="example-header-image"></div>
+                    <span class="ml10 mt10"><h2><b>{{q.title}}</b></h2></span>
+                    <span class="ml10 mt20">( {{q.category.title}} )</span>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <span class="mt10">Click here to {{panelOpenState ? 'collapse' : 'expand'}}</span>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="bootstrap-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <p class="ml20">{{q.description}}</p>
+                    </div>
+                    <hr>
+                    <div class="row mt10" style="margin-left: 3px;">
+                        <button 
+                            [routerLink]="'/admin/view-questions/' + q.qId + '/' + q.title" 
+                            mat-flat-button 
+                            color="accent">
+                            All Questions
+                        </button>
+    
+                        <button 
+                            mat-stroked-button
+                            color="accent" 
+                            class="ml10">
+                            Max Marks: {{ q.maxMarks }} 
+                        </button>
+                        <button 
+                            mat-stroked-button 
+                            color="primary" 
+                            class="ml10">
+                            Quiz Questions: {{q.noOfQuestions}} 
+                        </button>
+                        
+                        <button 
+                            mat-flat-button
+                            color="accent" 
+                            class="ml10" 
+                            [routerLink]="'/admin/update-quiz/' + q.qId">
+                            Modify Quiz
+                        </button>
+                        <button 
+                            [routerLink]="'/admin/view-record/'+q.qId"
+                            mat-flat-button 
+                            color="accent" 
+                            class="ml10">
+                            Attempt Details
+                        </button>
+                        <button 
+                            mat-flat-button  
+                            color="warn" 
+                            class="ml10" 
+                            (click)="deleteQuiz(q.qId)">
+                            Remove Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="container text-center mt20">
+        <button 
+            routerLink="/admin/add-quiz" 
+            mat-raised-button 
+            color="accent" 
+            style="margin-bottom: 50px;">
+            Add New Quiz
+        </button>
+    </div>
+<!-- </mat-card> -->
+
+

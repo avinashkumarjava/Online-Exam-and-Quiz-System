@@ -1,0 +1,29 @@
+.example-header-image {
+    background-image: url('https://image.flaticon.com/icons/png/512/327/327010.png');
+    background-size: cover;
+  }
+
+.xp:hover{
+  background-color: white;
+}
+
+.header-p{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  padding-top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  cursor: pointer;
+}
+
+.header-p:hover{
+  color: white;
+}
+.header-t{
+  text-align: right;
+  font-weight: 100;
+  padding-top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

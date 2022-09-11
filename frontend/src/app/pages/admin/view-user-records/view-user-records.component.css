@@ -1,0 +1,30 @@
+.example-header-image {
+    background-image: url('https://image.flaticon.com/icons/png/512/327/327010.png');
+    background-size: cover;
+  }
+
+  .truncate{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .back{
+    width: 20px;
+    height: 20px;
+    cursor: pointer; 
+}
+
+.back, .div:active{
+    transform: translateY(2px);
+}
+
+.div{
+    cursor: pointer;
+}
+
+.xp:hover{
+  background-color: white;
+}

@@ -1,0 +1,204 @@
+<div class="bootstrap-wrapper">
+    <div class="container" *ngIf="!flag">
+        <div class="row mt10">
+            <div class="col-md-12">
+                <mat-card class="color-card">
+                    <h1 class="text-center">All Feedbacks</h1>
+                </mat-card>
+            </div>
+        </div>
+        <div class="row" *ngIf="feed">
+            <div class="col-md-6" *ngFor="let f of feed; let i = index;">
+                <mat-card  class="mt10">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <b>{{ i+1 }}) </b>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    
+                                    <span>
+                                        <p>
+                                            <span style="color: black; font-size: 15px; text-transform: uppercase;"><b>{{ f.userData.firstName }} {{ f.userData.lastName }}</b></span>
+                                            <!-- <span style="color: grey; font-size: 12px;"><samp> {{ f.username}} </samp></span> -->
+                                        </p>
+                                    </span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="mt10" style="color: grey; font-size: 14px;"> {{ f.ftime }} </span>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <a mat-button color="accent" (click)="viewone(f.fid)">View</a>
+                                        <a mat-button color="warn">Seen</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="flag">
+        <div class="row mt10">
+            <div class="col-md-6">
+                <mat-card class="color-card">
+                    <h1 class="text-center">All Feedbacks</h1>
+                </mat-card>
+                <ngx-simplebar>
+                    <mat-card class="mt10 custom-scroll" *ngFor="let f of feed; let i = index;">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <b>{{ i+1 }}) </b>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        
+                                        <span>
+                                            <p>
+                                                <span style="color: black; font-size: 15px; text-transform: uppercase;"><b>{{ f.userData.firstName }} {{ f.userData.lastName }}</b></span>
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="mt10" style="color: grey; font-size: 14px;"> {{ f.ftime }} </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </ngx-simplebar>
+                <!-- <mat-card class="mt10 custom-scroll" *ngFor="let f of feed; let i = index;">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <b>{{ i+1 }}) </b>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    
+                                    <span>
+                                        <p>
+                                            <span style="color: black; font-size: 15px; text-transform: uppercase;"><b>{{ f.userData.firstName }} {{ f.userData.lastName }}</b></span>
+                                        </p>
+                                    </span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="mt10" style="color: grey; font-size: 14px;"> {{ f.ftime }} </span>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card> -->
+            </div>
+            <div class="col-md-6">
+                <mat-card class="viewfeedback">
+                    
+                    <h1 class="text-center"><b>Feedback Content</b></h1>
+                    <mat-divider></mat-divider>
+                    
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-md-6">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Name of Student</mat-label>
+                                <input 
+                                    type="text"
+                                    [value]="onefeed.userData.firstName &nbsp; + onefeed.userData.lastName"
+                                    matInput
+                                    readonly>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Mobile</mat-label>
+                                <input 
+                                    type="text"
+                                    [value]="onefeed.userData.phone"
+                                    matInput
+                                    readonly>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>username</mat-label>
+                                <input 
+                                    type="text"
+                                    [value]="onefeed.userData.username"
+                                    matInput
+                                    readonly>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Time of Feedback</mat-label>
+                                <input 
+                                    type="text"
+                                    [value]="onefeed.ftime"
+                                    matInput
+                                    readonly>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Feedback Title</mat-label>
+                                <input 
+                                    type="text"
+                                    [value]="onefeed.ftitle"
+                                    matInput
+                                    readonly>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Feedback Category</mat-label>
+                                <input 
+                                    type="text"
+                                    [value]="onefeed.fcategory"
+                                    matInput
+                                    readonly>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Feedback Description</mat-label>
+                                <textarea 
+                                    cols="7"
+                                    matInput
+                                    [value]="onefeed.fdesc"
+                                    readonly>
+                                </textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <button class="ml20" mat-raised-button color="warn" (click)="deleteFeed()">Delete</button>
+                            <button class="ml10" mat-raised-button color="primary" (click)="closethis()">Close</button>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<mat-card class="color-card mt10">
+    <p class="header-p text-center">Questions of Quiz : <span style="font-weight:bold;">{{qTitle}}</span> </p>
+    <mat-divider></mat-divider>
+    <div class="bootstrap-wrapper mt20">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container text-center">
+                    <button [routerLink]="'/admin/add-question/' + qId + '/' + qTitle" mat-raised-button>
+                        Add Question
+                    </button>
+                </div>
+                <mat-card *ngFor="let q of questions ; let i=index" class="mt10 mb20">
+                    <mat-card-content>
+
+                        <p>
+                            <b>Q.{{i+1}}</b>
+                            <span class="ml10" [innerHTML]="q.content">Question is not available</span>
+                        </p>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>
+                                        <span>1.</span>
+                                        <span class="ml10" [innerHTML]="q.option1"></span>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <p>
+                                        <span>2.</span>
+                                        <span class="ml10" [innerHTML]="q.option2"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>
+                                        <span>3.</span>
+                                        <span class="ml10" [innerHTML]="q.option3"></span>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <p>
+                                        <span>4.</span>
+                                        <span class="ml10" [innerHTML]="q.option4"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <mat-divider></mat-divider>
+
+                            <p class="mt10">
+                                <b>Correct answer:</b> <span class="ml10" [innerHTML]="q.answer"></span>
+                            </p>
+                        </div>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <button mat-button color="warn" (click)="deleteQuestion(q.quesId)">
+                            Delete
+                        </button>
+                        <button mat-button color="accent"
+                            [routerLink]="'/admin/update-question/' + q.quesId + '/' + qId + '/' + qTitle">
+                            Modify
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</mat-card>

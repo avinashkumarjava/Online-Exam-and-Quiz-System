@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.my-toolbar{
+    position: sticky;
+	background: #901DDB;
+    top: 0;
+    z-index: 1000;
+}

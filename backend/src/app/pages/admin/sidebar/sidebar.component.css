@@ -1,0 +1,9 @@
+.my-sidebar{
+    position: sticky;
+    top: 10px;
+    background-color: #69F0AE;
+}
+
+.all:hover{
+    color: white;
+}
